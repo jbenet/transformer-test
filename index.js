@@ -85,9 +85,7 @@ T.conversion = function(conv, io) {
 
   // patch in a utility conversion test.
   test.converts = function(t, conv, input, output) {
-    var wconv = Conversion.valueWrap(conv);
-    t.deepEquals(conv.convert(input), output, 'raw conversion');
-    t.deepEquals(wconv(input), output, 'wrapped conversion');
+    t.deepEquals(conv.convert(input), output, 'conversion');
   }
 
   test('conversion works - ' + conv.src.id, function(t) {
